@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --gradient-orange-dark: linear-gradient(45deg,#f57b24,#f27821 8%,#ef761f 17%,#ed731d 25%,#ea711a 33%,#e96e16 42%,#e26912 50%,#e06610 58%,#de640d 67%,#dc6109 75%,#db5e06 83%,#d85c03 92%,#d65900);
+    --content-width: 1300px;
+    --orange: rgba(255,83,13,1);
+    --pale-orange: rgb(249, 242, 243);
+}
+
+* {
+  box-sizing: border-box
+}
+
+body,
+html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    min-width: 320px;
+    background-color: #ddd;
+    background-image: url(/assets/images/ep_naturalwhite.png);
+    background-repeat: repeat;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 20px;
+    color: #444;
+}
+a {
+    color: var(--orange, orange);
+
+    &:hover {
+        background-color: var(--pale-orange, ivory);
+    }
+}
+
+/*----- Site Header -----*/
+.site--header {
+    margin: 1rem auto 0;
+    text-align: center;
+    padding: 2rem;
+    border-top: 0.125em solid rgba(0,0,0,0.15);
+    background-color: #f9f9f9;
+
+    .header--logo {
+        margin: 0;
+        
+        a:hover {
+            background-color: transparent;
+        }
+        img { 
+            max-width: 125px;
+        }
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+
+        a {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.25rem 0.75rem;
+        }
+    }
+}
+@media screen and (min-width: 900px) {
+    .site--header {
+        .header--logo img { 
+            max-width: 5rem;
+        }
+        nav {
+            flex-direction: row;
+        }
+    }
+}
+
+/*----- Site Main -----*/
+.site--main {
+    padding: 2rem;
+    background-color: #f9f9f9;
+
+    .content-center {
+        max-width: var(--content-width, 960px);
+        margin: 0 auto;
+    }
+    .flex-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        @media screen and (min-width: 700px) {
+            flex-direction: row;
+        }
+    }  
+    .flex-section.reverse {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        
+        @media screen and (min-width: 700px) {
+            flex-direction: row;
+        }
+    }
+    .card {
+        padding: 1rem 2rem;
+        border: 0.25rem solid #eee;
+        text-decoration: none;
+
+        img {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 700px) {
+            width: 33.333%;
+        }
+    }
+}
+
+/*--- Home Bio ---*/
+.bio-content {
+    font-size: 1.25rem;
+
+    img {
+        padding: 3rem;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+    @media screen and (min-width: 700px) {
+        margin: 3rem;
+    }
+}
+
+/*--- Gallery Layout ---*/
+.gallery {
+    max-width: var(--content-width, 960px);
+    margin: 0 auto;
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        a {
+            margin-bottom: 0.5rem;
+            
+            img {
+                width: 100%;
+            }
+            @media screen and (min-width: 700px) {
+                flex: 1 1 calc(25% - 1rem);
+            }
+        }
+    }
+}
+
+/*----- Site Footer -----*/
+.site--footer {
+    padding: 2em 2em 2.5em;
+    border-top: 0.1666em solid rgba(0,0,0,0.15);
+
+    ul.social-media {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        svg {
+            width: 3.5rem;
+            height: 3.5rem;
+            fill: rgba(0,0,0,0.3);
+            transition-duration: .6s;
+        }
+        a {
+            opacity: 1;
+		    transition-duration: 2s;
+        }
+        a:hover {
+            opacity: 10.5;
+            svg {
+                fill: var(--orange, orange);
+            }
+        }
+    }
+    small {
+        display: flex;
+        justify-content: center;
+        padding: 3rem 0;
+    }
+}
